@@ -1,0 +1,112 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0
+}
+
+body{
+    font-family:Tahoma, Geneva, sans-serif
+    background-color:#342F2C;
+    overflow: hidden;
+}
+
+.background_img{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    z-index:-1;
+    overflow: hidden;
+}
+
+.footer{
+    position:absolute;
+    top:500px;
+    left:50%;
+}
+.footer_center{
+    position: relative;
+    left:-50%;
+}
+
+.main_text {
+	color: #FFFFFF;
+	text-align: left;
+	display: block;
+}
+.center_img{
+	text-align: center;
+	display: block;
+    color:white;
+}
+h1, h2{
+    font-weight: normal;
+    color:white;
+    background-color:#342F2C;
+}
+
+h3{
+    font-weight: normal;
+    color:white;
+    background-color:#342F2C;
+    font-size:23px;
+}
+
+p{
+    font-weight: normal;
+    color:white;
+    background-color:#342F2C;
+}
+
+#faq_text{
+    position:absolute;
+    width: 800px;
+    left:50%;
+    text-align: left;
+}
+#faq_center{
+    position: relative;
+    left:-50%;
+    margin:10px;
+    padding:15px;
+    border:1px solid white;
+    margin:0px;
+    background-color:#342F2C;
+}
+
+#faq_answer, li{
+    position: relative;
+    left:15px;
+}
+
+#faq_link{
+    position: absolute;
+    left:90%;
+    top: 55px;
+    z-index:1;
+}
+
+#light_background{
+    background-color:white;
+}
+
+#tiny{
+    font-size:10px;
+}
+#small{
+    font-size:12px;
+}
+
+
+a:link{
+    color:white;
+}
+a:visited{
+    color:white;
+}
+a:hover{
+    color:white;
+}
+a:active{
+    color:white;
+}

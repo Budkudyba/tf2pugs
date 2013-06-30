@@ -1,5 +1,5 @@
 application: budkudyba-openid
-version: 1
+version: alpha-34
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -9,18 +9,34 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
-- url: /stylesheets
-  static_dir: stylesheets
+- url: /css
+  static_dir: css
 
 - url: /images
   static_dir: images
 
+- url: /js
+  static_dir: js
+
+- url: /fonts
+  static_dir: fonts
+
 - url: /_ah/login_required
   script: do_openid_login.app
+
+- url: /r/.*
+  script: room.app
 
 - url: .*
   script: main.app
 
+inbound_services:
+- channel_presence
+
 libraries:
 - name: webapp2
   version: "2.5.1"
+- name: django
+  version: "1.3"
+- name: yaml
+  version: "3.10"

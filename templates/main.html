@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>TF2 Pugs</title>
+    <script type="text/javascript" src="/_ah/channel/jsapi"></script>
+    <link rel="stylesheet" type="text/css" href="/css/pug_main.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+    <script src="/js/main.js"></script>
+    <script type='text/javascript'>
+        var token = '{{token}}';
+        var nickname = '{{user}}';
+        var alias = '{{nickname}}';
+    </script>
+</head>
+<body>
+    <noscript>
+        <style type="text/css">
+            .pagecontainer {display:none;}
+        </style>
+        <div class="noscriptmsg">
+            <p>You need Javascript enabled to access this site.
+            <a href="https://www.google.com/search?hl=en&tbo=d&output=search&sclient=psy-ab&q=how+to+enable+javascript">Let me google that for you</p>
+        </div>
+    </noscript>
+
+<div class="pagecontainer">
+<div class="margin">
+<div id="content">
+
+    <div class="background_img">
+        <img src="/images/background.jpg">
+    </div>
+    <div id="tf_logo">
+        <img src="/images/tf_logo.png">
+    </div>
+
+    <div>
+    {% if user == "76561197990677771" %}
+        <p><a href="http://localhost:8083/a">ADMIN</a></p>
+    {% endif%}
+    </div>
+
+
+
+    <div id="container">
+        <div id="leftcolumn">
+            <h1 id="welcome">Welcome,</h1>
+            <h2 id="username">{{nickname}}</h2>
+        </div>
+        <div id="title">
+            <h1 id="tf2_pugs">TF2 Pugs</h1>
+            <p id="version" >version: {{ version }}</p>
+            <div id="version_popup">
+                <h3> This is an alpha build </h3>
+                <p> I am currently working on getting the layout correct and rooms active </p>
+            </div>
+            <p id="logout"><a href="{{logout_url}}">[Logout]</a></p>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div id="container">
+        <div id="leftcolumn">
+            <p>Main Chat <span id="chat_number"></span></p>
+            <div class="outside">
+                <div id="chat_box"></div>
+            </div>
+            <div><input size="58" type="text" id="message" maxlength ="120" placeholder="Go ahead, say something!"></div>
+        </div>
+        <div id="news">
+            <h2><u>News</u></h2>
+            {% for article in news %}
+                <p>&nbsp&nbsp{{article.date}}<br><b>{{article.content}}</b></p><br>
+            {% endfor %}
+        </div>
+        <div class="clear"></div>
+    </div>
+
+<!-- Your Matches ------------------------------------------------------------------------------------------------------>
+    <div id="container">
+        <div class="live_pugs">
+            <h3>Available Pugs</h3>
+            <hr>
+            <div id="pug_rooms">
+                <div id="leftcolumn">
+                    <table id="pug_rooms_table">
+                        {% for room in gameroom %}
+                            <tr id='{{room.number}}'>
+                                <td id='name'>{{room.name}}</td>
+                                <td id='map'>{{room.level}}</td>
+                                <td id='style'>{{room.gstyle}}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <hr>
+        </div>
+
+        <div class="pug_room">
+            <div id="room_info">
+            <table>
+                <tr>
+                <td id='room_name'><h4>#Room Name</h4></td>
+                <td id='room_id'>#mumble</td>
+                <td id='leader_name'>#leader</td>
+                <td></td>
+                <td id="room_map">#map</td>
+                <td id="disband">Disband</td>
+                <td id="leave_room">Leave Room</td>
+                </tr>
+            </table>
+            </div>
+            <hr>
+
+            <!--<a href="steam://connect/199.21.112.10:27015/Magic">tf2 server test link</a>-->
+            <!--<a href="mumble://>f7> Nakedape@djedi.biz:64738/?version=1.2.0">mumble server test link</a>-->
+            <div id="container">
+            <div id="picking_tables">
+            <div id="leftcolumn">
+            <table id="picking_table">
+            <tr id="scout">
+                <td><img id="scout_img" src="/images/icons/blu/scout.png"></td>
+            </tr>
+            <tr id="soldier">
+                <td><img id="soldier_img" src="/images/icons/blu/soldier.png"></td>
+            </tr>
+            <tr id="pyro">
+                <td><img id="pyro_img" src="/images/icons/blu/pyro.png"></td>
+            </tr>
+            <tr id="demo">
+                <td><img id="demo_img" src="/images/icons/blu/demo.png"></td>
+            </tr>
+            <tr id="heavy">
+                <td><img id="heavy_img" src="/images/icons/blu/heavy.png"></td>
+            </tr>
+            <tr id="medic">
+                <td><img id="medic_img" src="/images/icons/blu/medic.png"></td>
+            </tr>
+            <tr id="engie">
+                <td><img id="engie_img" src="/images/icons/blu/engie.png"></td>
+            </tr>
+            <tr id="sniper">
+                <td><img id="sniper_img" src="/images/icons/blu/sniper.png"></td>
+            </tr>
+            <tr id="spy">
+                <td><img id="spy_img" src="/images/icons/blu/spy.png"></td>
+            </tr>
+            </table>
+            </div>
+            <div id="rightcolumn_leftjustify">
+            <table id="picking_table_red">
+            <tr id="scout_red">
+                <td><img id="scout_img_red" src="/images/icons/red/scout.png"></td>
+            </tr>
+            <tr id="soldier_red">
+                <td><img id="soldier_img_red" src="/images/icons/red/soldier.png"></td>
+            </tr>
+            <tr id="pyro_red">
+                <td><img id="pyro_img_red" src="/images/icons/red/pyro.png"></td>
+            </tr>
+            <tr id="demo_red">
+                <td><img id="demo_img_red" src="/images/icons/red/demo.png"></td>
+            </tr>
+            <tr id="heavy_red">
+                <td><img id="heavy_img_red" src="/images/icons/red/heavy.png"></td>
+            </tr>
+            <tr id="medic_red">
+                <td><img id="medic_img_red" src="/images/icons/red/medic.png"></td>
+            </tr>
+            <tr id="engie_red">
+                <td><img id="engie_img_red" src="/images/icons/red/engie.png"></td>
+            </tr>
+            <tr id="sniper_red">
+                <td><img id="sniper_img_red" src="/images/icons/red/sniper.png"></td>
+            </tr>
+            <tr id="spy_red">
+                <td><img id="spy_img_red" src="/images/icons/red/spy.png"></td>
+            </tr>
+            </table>
+            </div>
+            </div>
+            <div class="clear"></div>
+            </div>
+
+            <p id="members">Members:&nbsp</p>
+            <p id="required">Required:&nbsp Scout Soldier Pyro Demoman HeavyWeapons Medic Engineer Sniper Spy Captain</p>
+        </div>
+
+        <div class="ready_box">
+        CLICK HERE TO READY!
+        </div>
+
+        <div class="footer">
+            <p id="tiny">&#169; 2013 Valve Corporation. All rights reserved. Valve, the Valve logo, Steam,
+            the Steam logo, Team Fortress, the Team Fortress logo, Source, the Source logo are trademarks
+            and/or registered trademarks of Valve Corporation. All other trademarks are property of their respective owners.</p>
+            <p>Site by: Paul "Nakedape" Kudyba&nbsp</p>
+        </div>
+        <div class="clear"></div>
+    </div><!--container-->
+</div><!--content-->
+</div><!--margin-->
+</div><!--pagecontainer-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,290 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0
+}
+
+body{
+    font-family:Tahoma, Geneva, sans-serif
+}
+
+#tiny{
+    font-size:10px;
+}
+
+#members,#required{
+    text-align:left;
+    font-size:10px;
+    left: 20em;
+}
+
+#welcome{
+    font-size:40px;
+}
+
+#username{
+    position: relative;
+    left: 20px;
+}
+
+#tf2_pugs{
+    color: #EF9849;
+}
+
+#version{
+    opacity:0.4;
+    overflow: hidden;
+}
+
+#picking_tables img{
+    opacity:0.4;
+}
+
+#picking_tables img:hover{
+    opacity:1.0;
+}
+
+a:link,a:visited,a:hover,a:active{
+     color: white;
+}
+
+.margin{
+    background-color:#342F2C;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    box-shadow: 0px 0px 15px Black;
+}
+
+.background_img{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    z-index:-10;
+    overflow: hidden;
+}
+
+#tf_logo{
+    position:absolute;
+    left:60%;
+    top:0px;
+    z-index:-9;
+    overflow:hidden;
+    width:500px;
+    opacity:0.6;
+}
+
+.main_text {
+	color: white;
+	text-align: left;
+	display: block;
+	font-family: "TF2 Build";
+}
+
+#tiny{
+    font-size:10px;
+}
+
+#message{
+    width: 380px;
+}
+
+#content{
+  width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  color:white;
+  display: block;
+  background-color:#342F2C;
+  overflow:hidden;
+}
+
+.outside{
+    height: 200px;
+    overflow: hidden;
+}
+
+#container{
+    width: 768px;
+    text-align: center;
+}
+
+#leftcolumn{
+    width: 384px;
+    float: left;
+    font-weight: normal;
+    text-align: left;
+}
+
+#leftcolumn_createteam{
+    width: 100px;
+    float: left;
+    font-weight: normal;
+    text-align: left;
+}
+
+#rightcolumn{
+    width: 384px;
+    float: right;
+    font-weight: normal;
+    text-align: right;
+}
+
+#rightcolumn_leftjustify{
+    width: 384px;
+    float: right;
+    font-weight: normal;
+    text-align: left;
+}
+
+#rightcolumn_createteam{
+    width: 384px;
+    float: left;
+    font-weight: normal;
+    text-align: left;
+}
+
+#title{
+    width: 150px;
+    float: right;
+    font-weight: normal;
+    text-align: right;
+}
+
+#news{
+    width: 350px;
+    float: right;
+    font-weight: normal;
+    text-align: left;
+}
+
+.clear{
+    clear: both;
+}
+
+#logout a:link,a:visited,a:hover,a:active{
+     color: white;
+}
+
+#create_team_button{
+    /*border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    background-color: black;*/
+    width: 200px;
+    text-align: center;
+    cursor: hand;
+    cursor: pointer;
+}
+
+#create_team_button:hover{
+    text-shadow: 0 0 0.2em #EF9849;
+}
+
+.create_team{
+    text-align: left;
+}
+
+#chat_box{
+    background-color:lightgrey;
+    color: black;
+    overflow-x:auto;
+    font-size: 12px;
+    white-space: pre-wrap;      /* CSS3 */
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: -pre-wrap;     /* Opera <7 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    word-wrap: break-word;      /* IE */
+}
+
+div#version_popup {
+  display: none;
+  position: absolute;
+  width: 256px;
+  padding: 10px;
+  background: #eeeeee;
+  color: #000000;
+  border: 1px solid #1a1a1a;
+  font-size: 90%;
+  text-align: left;
+  opacity : 0.85;
+}
+
+#pug_rooms table{
+    table-layout: fixed;
+    width: 800px;
+    white-space: nowrap;
+}
+
+#pug_rooms th, td #name{
+    overflow: hidden;
+    width: 100px;
+}
+
+#pug_rooms_table tr:hover{
+    background: #EF9849;
+}
+
+#pug_room table{
+    table-layout: fixed;
+    width: 200px;
+}
+
+#pug_room th, td {
+    overflow: hidden;
+    width: 100px;
+}
+
+#room_info table {
+    table-layout: fixed;
+    width: 45em;
+    white-space: nowrap;
+}
+
+#leave_room, #disband{
+    cursor: hand;
+    cursor: pointer;
+}
+
+#scout,#pyro,#heavy,#engie,#spy{
+    color: #C8C8C8;
+}
+
+#scout_red,#pyro_red,#heavy_red,#engie_red,#spy_red{
+    color: #C8C8C8;
+}
+
+.ready_box{
+    position: absolute;
+    width: 256px;
+    padding: 10px;
+    background: #EF9849;
+    color: #000000;
+    border: 1px solid #1a1a1a;
+    font-size: 90%;
+    text-align: right;
+    opacity : 0.85;
+    box-shadow: 0px 0px 10px Black;
+    cursor: hand;
+    cursor: pointer;
+    left:70%;
+    top:500px;
+    z-index:0;
+}
+
+.footer{
+    position:fixed;
+    bottom:0px;/*roughly = background height (1080) - text height*/
+    font-size: 15px;
+    background-color:#342F2C;
+    text-align: center;
+    width: 768px;
+    box-shadow: 0px 0px 10px Black;
+}
+
+
+
+
+
+

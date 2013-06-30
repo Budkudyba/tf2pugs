@@ -11,6 +11,12 @@ indexes:
 # your application using appcfg.py.
 
 - kind: GameRoom
+  properties:
+  - name: leader
+  - name: date
+    direction: desc
+
+- kind: GameRoom
   ancestor: yes
   properties:
   - name: date
