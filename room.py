@@ -7,6 +7,7 @@ import datetime
 from django.utils import simplejson
 #import simplejson as json
 import os
+import random
 
 import webapp2
 from google.appengine.api import channel
@@ -255,10 +256,10 @@ class ToggleClass(webapp2.RequestHandler):#-------------------------------------
             record.members.append(db.Text(append_name))
             record.put()
 
-            #check for ready
+            #check for launch
             if check_number_added(record.members) == 18:
                 rdy_message = {
-                    'type': "ready",
+                    'type': "launch",
                     'room': room
                 }
                 for m in record.members:
@@ -303,7 +304,44 @@ class ForceReady(webapp2.RequestHandler):#--------------------------------------
                 user_info = m.split(';')
                 message = simplejson.dumps(rdy_message)
                 channel.send_message(user_info[0], message)
-            self.response.out.write("Room %s ready" % room)
+            self.response.out.write("Room %s Ready" % room)
+class ForceLaunch(webapp2.RequestHandler):#--------------------------------------used to force a room ready
+    def post(self):
+        steamid64 = parse_id(users.get_current_user().nickname())
+        if steamid64 == "76561197990677771":
+            room = self.request.get('room')
+            key = db.Key.from_path('GameRoom','default_gameroom','GameRoom', long(room))
+            record = GameRoom.get(key)
+            password = random.randrange(100,999,1)
+            rdy_message = {
+                'type': "launch",
+                'ip': record.ip,
+                'password': password,
+                'room': room
+            }
+            for m in record.members:
+                user_info = m.split(';')
+                message = simplejson.dumps(rdy_message)
+                channel.send_message(user_info[0], message)
+
+            #make room inactive
+            record.active = False
+            record.put()
+
+            """form_fields = {
+                "ip"    :"199.21.112.10:27015",
+                "rcon"  :"lalala",
+                "command":"status"
+            }
+            form_data = urllib.urlencode(form_fields)
+            url = "http://budkudyba.com/__pug/command.php"
+            result = urlfetch.fetch(url = url,
+                                    payload=form_data,
+                                    method=urlfetch.POST,
+                                    headers={'Content-Type': 'application/x-www-form-urlencoded'})
+            self.response.out.write(result.content)"""
+
+            self.response.out.write("Room %s Launched" % room)
 
 class ReadyPlayer(webapp2.RequestHandler):#--------------------------------------used to force a room ready
     def post(self):

@@ -268,9 +268,13 @@ onMessage = function(m){//------------------------------------------------------
             var room_id = $("#room_id").html();
             roomMessage = 'room=' + room_id;
             sendMessage('/ready', roomMessage);
-            //alert(roomMessage);
             $(".ready_box").hide()
         });
+    }else if (newData.type == "launch"){//---------------------------------------Launch the game
+        //alert("nukular launch detected");
+        //steam://connect/<IP or DNS name>[:<port>][/<password>]
+        var launch_link = "steam://connect/" + newData.ip + "/" + newData.password;
+        window.location.href = launch_link;
     }else if (newData.type == "popup"){//---------------------------------------pop-up with text
         alert(newData.message);
     }else if (newData.type == "chat"){//----------------------------------------chat

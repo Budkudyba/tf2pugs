@@ -313,6 +313,7 @@ app = webapp2.WSGIApplication([
     ('/toggle_class', ToggleClass),
     ('/disband', GameRoomDisband),
     ('/forceReady', ForceReady),
+    ('/forceLaunch', ForceLaunch),
     ('/ready', ReadyPlayer),
 
     #----------------------------------#team.py

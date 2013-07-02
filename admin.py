@@ -50,10 +50,17 @@ class AdminHandler(webapp2.RequestHandler):#------------------------------------
                     <div><input type="submit" id="create_room_button" value="Create Room"></div>
                     </form>
                     """)
+                self.response.out.write("""<hr>""")
                 self.response.out.write("""
                     <form action="/forceReady" method="post">
                     <div>RoomID:<input type="text" name="room"></div>
                     <div><input type="submit" id="create_room_button" value="MakeReady"></div>
+                    </form>
+                    """)
+                self.response.out.write("""
+                    <form action="/forceLaunch" method="post">
+                    <div>RoomID:<input type="text" name="room"></div>
+                    <div><input type="submit" id="create_room_button" value="MakeLaunch"></div>
                     </form>
                     """)
             else:
